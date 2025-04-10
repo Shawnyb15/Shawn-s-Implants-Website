@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dental Implants Overview</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+ 
+        h1, h2 {
+            color: #0077cc;
+        }
+ 
+        .menu {
+            margin-top: 20px;
+        }
+ 
+        button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px;
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+ 
+        button:hover {
+            background-color: #005fa3;
+        }
+ 
+        .section {
+            margin-top: 30px;
+            display: none;
+        }
+ 
+        .back-btn {
+            margin-top: 20px;
+            background-color: #ccc;
+            color: #333;
+        }
+</style>
+</head>
+<body>
+ 
+    <h1>Dental Implants Overview</h1>
+<div class="menu" id="menu">
+<p>Choose a topic to learn about:</p>
+<button onclick="showSection(1)">1. What are Implants?</button>
+<button onclick="showSection(2)">2. Snap Secure Implants</button>
+<button onclick="showSection(3)">3. Fixed Implants (All-in-One)</button>
+<button onclick="showSection(4)">4. Single Tooth Implant</button>
+<button onclick="showSection(5)">5. Implant Sizes & Types</button>
+<button onclick="showSection(6)">6. Specialized Locations</button>
+</div>
+ 
+    <div class="section" id="section">
+<h2 id="sectionTitle"></h2>
+<p id="sectionContent"></p>
+<button class="back-btn" onclick="goBack()">Back to Menu</button>
+</div>
+ 
+    <script>
+        const sections = {
+            1: {
+                title: "What are Implants?",
+                content: "- Implants are titanium posts gently placed in your jawbone.<br>" +
+                         "- They stabilize dentures or replace single/multiple teeth.<br>" +
+                         "- They help dentures snap on and off securely."
+            },
+            2: {
+                title: "Snap Secure Implants",
+                content: "- This office offers implants to secure your denture.<br>" +
+                         "- Typically, 2-6 titanium posts are placed in the gums.<br>" +
+                         "- The denture snaps on and off easily.<br>" +
+                         "- A Cone Beam X-ray is taken to determine if you're a good candidate."
+            },
+            3: {
+                title: "Fixed Implants (All-in-One)",
+                content: "- A permanent bridge that fits and feels like natural teeth.<br>" +
+                         "- Offered at select practices.<br>" +
+                         "- FIXEDSecure Dental Implants provide permanent teeth at a lower cost."
+            },
+            4: {
+                title: "Single Tooth Implant",
+                content: "- Replaces one or more missing teeth.<br>" +
+                         "- Provides a permanent, natural-looking solution."
+            },
+            5: {
+                title: "Implant Sizes & Types",
+                content: "1. Full Size (Root Form):<br>" +
+                         "&nbsp;&nbsp;- Short and thick<br>" +
+                         "&nbsp;&nbsp;- Requires 2-4 posts<br><br>" +
+                         "2. Mini Implants:<br>" +
+                         "&nbsp;&nbsp;- Long and thin<br>" +
+                         "&nbsp;&nbsp;- Requires 4-6 posts<br>" +
+                         "&nbsp;&nbsp;- Introduced in 2002"
+            },
+            6: {
+                title: "Specialized Locations",
+                content: "- Implant Retained Dentures (Do not snap out):<br>" +
+                         "&nbsp;&nbsp;Available in West Palm Beach and Yakima."
+            }
+        };
+ 
+        function showSection(num) {
+            const menu = document.getElementById("menu");
+            const section = document.getElementById("section");
+            const title = document.getElementById("sectionTitle");
+            const content = document.getElementById("sectionContent");
+ 
+            title.innerHTML = sections[num].title;
+            content.innerHTML = sections[num].content;
+ 
+            menu.style.display = "none";
+            section.style.display = "block";
+        }
+ 
+        function goBack() {
+            document.getElementById("section").style.display = "none";
+            document.getElementById("menu").style.display = "block";
+        }
+</script>
+ 
+</body>
+</html>
